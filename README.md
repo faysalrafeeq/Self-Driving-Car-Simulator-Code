@@ -4,8 +4,6 @@ This Project includes Udacity simulator and code for self drive.
 ## Overview
 In the Project of Udacity Self-Driving car nanodegree (www.udacity.com), we’re invited to design a system that drives a car autonomously in a simulated environment.The objective of this project is to clone human driving behavior using a Deep Neural Network. In order to achieve this,I am going to use a simple Car Simulator. During the training phase, I will navigate car inside the simulator using the keyboard.The Image is attached below of the training track
 
-![](https://cdn-images-1.medium.com/max/800/1*aHxbc87TgSJV3VWDa98lQQ.jpeg)
-
 
 ### Dataset Gathering
 While the car is being driven it records all the data of the training phase into a file called "Training.csv".
