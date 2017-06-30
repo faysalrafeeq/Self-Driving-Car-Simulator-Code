@@ -16,7 +16,7 @@ STEERING ANGLE,
 THROTTLE,
 SPEED,
 REVERSE.So now Inputs: Recorded images and steering angles, Outputs: Predicted steering angles.
-### UDACITY STIMULATOR
+### Udacity Stimulator
 The data to be gathered is collected through beta stimulator provided by Udacity.You have to explicitly make a folder named
 "DATA" and leave rest to the stimulator.The stimulator will itslef create a "driving_log.csv" file with images.
 #### Dependencies
@@ -272,6 +272,7 @@ A learning rate of 0.001 was used, with Adam optimizer. Adam optimizer is a good
 
 
 ELU activation function proved superior. This paper discusses that ELU is better than RELU, a function that avoids vanishing gradient but keeps the non-linearity of the network. (http://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-elu/).
+###### Screen Shots Of My Training
 
 
 
@@ -309,4 +310,7 @@ ELU: http://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-e
 Dropout: https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf
 ###### Credits
 https://github.com/upul/Behavioral-Cloning
+
+
+
 https://github.com/asgunzi/CarND-Simulator
