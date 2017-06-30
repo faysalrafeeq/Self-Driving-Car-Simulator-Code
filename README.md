@@ -16,6 +16,9 @@ STEERING ANGLE,
 THROTTLE,
 SPEED,
 REVERSE.So now Inputs: Recorded images and steering angles, Outputs: Predicted steering angles.
+### UDACITY STIMULATOR
+The data to be gathered is collected through beta stimulator provided by Udacity.You have to explicitly make a folder named
+"DATA" and leave rest to the stimulator.The stimulator will itslef create a "driving_log.csv" file with images.
 #### Dependencies
 
 This project requires **Python 3.5** and the following Python libraries installed:
@@ -28,7 +31,6 @@ This project requires **Python 3.5** and the following Python libraries installe
 - [OpenCV](http://opencv.org/)
 - [Matplotlib](http://matplotlib.org/) 
 - [Jupyter](http://jupyter.org/) 
-- [tensorflow]
 - [numpy]
 - [wheel]
 - [utlis]
@@ -36,7 +38,7 @@ This project requires **Python 3.5** and the following Python libraries installe
 
 This repository comes with trained model which you can directly test using the following command.
 
-- "python drive.py model.h5"   (For this include a data folder containing the driving_log.csv file)
+- "python drive.py model.h5"(For this include a data folder containing the driving_log.csv file,See the section UDACITY STIMULATOR above)
 
 
 - "python drive.py model_x.h5" (This includes the already trained model on my attempt for better results)
@@ -103,15 +105,6 @@ So, we have data from lateral cameras. But what to do with it?
 
 Following a suggestion from the great carND forum (by the way, almost all of these tips are from there), I added a correction angle of 0.10 to the left image, and -0.10 to the right one. The idea is to center the car, avoid the borders.
  
- 
-###### Flip images
-
- Another excellent tip. We can randomly choose to flip the image, and invert the steering angle. This way, we can neutralize some tendency of the human driver that drove a bit more to the left or to the right of the lane.
- 
- 
- 
- 
-![](https://cdn-images-1.medium.com/max/800/1*WEnZL4wa4b2jegcO-sTaew.png)
 
 
 
@@ -119,50 +112,22 @@ Following a suggestion from the great carND forum (by the way, almost all of the
 
 
 
-Original and flipped image
- if np.random.uniform()>0.5:
- X_in[i,:,:,:] = cv2.flip(X_in[i,:,:,:],1)
- Y_in[i] = -p[i] #Flipped images
- 
-Be carefill to use the function correctly. Flip with parameter zero will do a wrong thing.
-
-
-
-
-
-![](https://cdn-images-1.medium.com/max/800/1*kP-kJLmC3RCT5N02-AFAyg.png)
-
-
-
-
-
-Wrong flipping
-
-
-###### Random lateral perturbation
-
-
-
-The idea is to move to image a randomly a bit to the left or the right, and add a proportional compensation in the angle value. In the end, I didn’t used this approach, but it is a good idea.
-
- pix2angle = -0.05 #Opposed direction
- latShift = random.randint(-5,5) 
- M = np.float32([[1,0,latShift],[0,1,0]])
- imgTranslated = cv2.warpAffine(img,M,(img.shape[1],img.shape[0]))
 
 
 
 
 
 
-![](https://cdn-images-1.medium.com/max/800/1*Nja-8EwSK3bc_HKuqrYCyw.png)
 
 
 
 
 
 
-Example of a exaggerated lateral Shift
+
+
+
+
 
 ###### Resize
 
@@ -342,3 +307,6 @@ ELU: http://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-e
 
 
 Dropout: https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf
+###### Credits
+https://github.com/upul/Behavioral-Cloning
+https://github.com/asgunzi/CarND-Simulator
