@@ -273,8 +273,17 @@ A learning rate of 0.001 was used, with Adam optimizer. Adam optimizer is a good
 
 ELU activation function proved superior. This paper discusses that ELU is better than RELU, a function that avoids vanishing gradient but keeps the non-linearity of the network. (http://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-elu/).
 ###### Screen Shots Of My Training
+![image](https://user-images.githubusercontent.com/22270882/27743953-5f9d8a72-5d83-11e7-9520-49c4edb68118.png)
 
 
+
+
+
+
+
+
+
+loss is:0.0031 at the 100 stage;
 
 
 
